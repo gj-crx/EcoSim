@@ -1,0 +1,10 @@
+State types names count_7
+state type name_Kingdom
+state type name_Tribe
+state type name_Duchy
+state type name_Order
+state type name_Holy Order
+state type name_Republic
+state type name_Union
+In war state true_Currently in war
+In war state false_Not in war

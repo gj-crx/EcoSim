@@ -1,0 +1,6 @@
+Mission 0 completed_False
+Mission 1 completed_False
+Mission 2 completed_False
+Mission 3 completed_False
+Mission 4 completed_True
+Mission 5 completed_False

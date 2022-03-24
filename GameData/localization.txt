@@ -1,0 +1,78 @@
+Localization name_English
+Hint0|Text]This is a game of ecosystems simulations. Every creature lives its own life here. Your only way to interfere simulated worlds in this game is to create a new different species.
+Hint1|Text]The typical life cycle of every creature consists of obtaining food, reproduction and protection of offspring. This is also the main actions that creatures perform in the game and you can see them right now.
+Hint2|Text]You can observe the life process of this simulation for a while, or just immediately start exploring the creature editor by clicking "Creatures" button.
+Hint9|Text]Let's spawn your new species and observe its life. Press the "Spawn creature" button to do it.
+Hint11|Text]Usually you have a limit for amount of creatures spawned in mission but not in this tutorial.
+Name_Indicator|PreText]Species:
+Name_Indicator|Text]unknown
+HP_Indicator|PreText]HP:
+HP_Indicator|Text]0 /  0
+Dmg_Indicator|PreText]Damage:
+Action_Indicator|PreText]Action:
+Action_Indicator|Text]unknown
+Energy_Indicator|PreText]Energy:
+Age_Indicator|PreText]Age:
+Button_1 Gray (3)|Text]Options
+Button_1 Gray (3)|Text]Creatures
+Button_1 Gray (3)|Text]Spawn creature
+InGameGUI|Tooltip_creature_spawning_limit]Creature spawning limit exceeded for this mission
+InGameGUI|Tooltip_mission_complete]Misssion complete!
+Tutorial_QuesttIndicator|PreText]Player creatures:
+Tutorial_QuesttIndicator|Text]0 /  6
+Mission0_QuesttIndicator|PreText]Player creatures:
+Mission0_QuesttIndicator|Text]0 /  12
+subindicator1_totalspecies|PreText]Total creatures:
+subindicator1_totalspecies|Text]0 / 25
+subindicator2_Time|PreText]Time left:
+subindicator2_Time|Text]0 / 35
+subindicator1_totalspecies|PreText]Total creatures:
+subindicator1_totalspecies|Text]0 / 10
+subindicator2_Time|PreText]Time left:
+subindicator2_Time|Text]0 / 90
+Mission3_QuesttIndicator|PreText]Total creatures:
+Mission3_QuesttIndicator|Text]? /  0
+subindicator1_totalspecies|PreText]Total creatures:
+subindicator1_totalspecies|Text]0 / 25
+subindicator2_Time|PreText]Time left:
+subindicator2_Time|Text]0 / 20
+Slider_1 Gray|ValueText]x1.0
+GameSpeedSlider|Text]Game speed
+Button_1 Gray (3)|Text]Return to game
+Hint3|Text]This large tab allows you to design your own species. Let's quickly go through all the settings here.
+Hint4|Text]These settings allow you to modify health, hit damage, food searching distance, and the maximum lifespan of your creatures.
+Hint5|Text]It takes 1 point to increase any stats. Decreasing your creature's stats will also give you 1 point.
+Hint6|Text]You can also choose the type of your species. Land and marine species can only exist in their habitat. Amphibians can live both on water and land.
+Hint7|Text]Once you've completed creating the new species, click the "create" button. All your created species will be displayed in the panel on the right.
+Hint8|Text]Let's get back to the game and create your first custom species.
+TotalPoints|PreText]Points:
+Damage|PreText]Damage:
+HintDamage|Questionmark (1)]Empty hint text (coming soon)
+HP|PreText]HP:
+HP|Text]100
+HintHP|Questionmark (1)]Empty hint text (coming soon)
+SenceRange|PreText]Sence range:
+HintSenceRange|Questionmark (1)]Empty hint text (coming soon)
+MaxAge|PreText]Max age:
+MaxAge|Text]130
+HintMaxAge|Questionmark (1)]Empty hint text (coming soon)
+Habitation type|Text]Habitation type:
+toggle_land|Label]Land | 0 points
+Toggle_amphibious|Label]Amphibious | 3 points
+toggle_marine|Label]Marine | +3 points
+Food type|Text]Food type:
+toggle_carnivore|Label]Carnivore | +2 points
+toggle_herbivore|Label]Herbivore | 0 points
+toggle_omnivore|Label]Omnivore | 2 points
+InputField|Placeholder]Enter species name...
+ModelSelection|Text]Сhoose the appearance of the creature
+Button_1 Gray (3)|Text]Create
+SpeciesBar(Clone)|damage]Damage: 56
+SpeciesBar(Clone)|MaxAge]Max Age: 70
+SpeciesBar(Clone)|HP]HP: 60
+SpeciesBar(Clone)|food type]Carnivore
+SpeciesBar(Clone)|habitation]Land animal
+SpeciesBar(Clone)|name]custom hunter
+CreatedSpeciesList|Text]Created species list |
+CreatedSpeciesList|Text (1)]Selected: custom hunter
+end

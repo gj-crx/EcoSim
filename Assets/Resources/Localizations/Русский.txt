@@ -1,0 +1,113 @@
+Localization file_True
+Localization name_Русский
+Creature 0]Растение&
+Creature 1]Травоядное животное&
+Creature 2]Стайный охотник&
+Creature 3]Большой хищник&
+Creature 4]Водоросли&
+Creature 5]Морское животное&
+Creature 6]Морской хищник&
+Creature 7]Всеядный монстр&
+Action 0]Бездействие&
+Action 1]Охота&
+Action 2]Размножение
+Action 3]Убегает&
+Action 4]Миграция&
+Action 5]Поедание травы&
+Hint0|Text]Добро пожаловать в EcoSim - игру про симулирование небольших искуственных экосистем. Здесь каждое существо живет своей жизнью и самостоятельно принимает решения для выживания. Ваш единственный способ вмешаться в смоделированные миры в этой игре — создать собственные виды жизни.&
+Hint1|Text]Типичный жизненный цикл каждого существа состоит из добывания пищи, размножения и защиты потомства. Это также основные действия, которые совершают существа в игре, и вы можете наблюдать их прямо сейчас.&
+Hint2|Text]Вы можете некоторое время понаблюдать за жизненным процессом этой симуляции, либо сразу же начать изучать редактор существ, нажав кнопку "Существа".&
+Hint9|Text]Давайте породим ваше первое существо и пронаблюдаем за процессом его жизни. Нажмите кнопку "Создать существо", чтобы продолжить.&
+Hint10|Text]Если вы выполняете миссии, у вас будет индикатор цели в правом верхнем углу экрана. Ваша текущая цель — одновременно оживить шесть созданных вами существ.&
+Hint11|Text]Для достижения цели вам следует сконструировать вид, который сможет выжить и размножаться до необходимого количества. Но в этом уроке вы можете просто вручную создавать существ без ограничений, чтобы выполнить задание.&
+Hint12|Text]Выполните цель миссии, чтобы закончить обучение.&
+Hint13|Text]Вы успешно завершили обучение. Теперь вы можете выполнять миссии или попробовать бесплатную игру.&
+Name_Indicator|PreText]Разновидность:&
+Name_Indicator|Text]неизвестный&
+HP_Indicator|PreText]HP:&
+HP_Indicator|Text]0 / 0&
+Dmg_Indicator|PreText]Урон:&
+Action_Indicator|PreText]Действие:&
+Action_Indicator|Text]Неизвестно&
+Energy_Indicator|PreText]Энергия:&
+Age_Indicator|PreText]Возраст:&
+Options Button|Text]Опции&
+Species List Button|Text]Разновидность&
+Spawn Creature Button|Text]Создание существа&
+InGameGUI|Tooltip_creature_spawning_limit]Превышен предел создания существ для этой миссии&
+InGameGUI|Tooltip_mission_complete]Миссия завершена!&
+Tutorial_QuesttIndicator|PreText]Существа игрока:&
+Tutorial_QuesttIndicator|Text]0/6&
+Mission0_QuesttIndicator|PreText]Существа игрока:&
+Mission0_QuesttIndicator|Text]0/12&
+Mission1_QuesttIndicator|PreText]Всего существ:&
+Mission1_QuesttIndicator|Text]0 / 22&
+subindicator2_Time|PreText]Времени осталось:&
+subindicator2_Time|Text]0 / 35&
+Mission2_QuesttIndicator|PreText]Всего существ:&
+Mission2_QuesttIndicator|Text]0/10&
+subindicator2_Time|PreText]Время вышло:&
+subindicator2_Time|Text]0 / 90&
+Mission3_QuesttIndicator|PreText]Всего существ:&
+Mission3_QuesttIndicator|Text]? / 0&
+Mission4_QuesttIndicator|PreText]Всего существ:&
+Mission4_QuesttIndicator|Text]0 / 25&
+subindicator2_Time|PreText]Время вышло:&
+subindicator2_Time|Text]0/20&
+GameSpeedSlider|ValueText]x1.0&
+GameSpeedSlider|Text]Скорость игры&
+ReturnToGameButton1|Text]Вернуться к игре&
+ExitToMenuButton2|Text]Выйти в меню&
+Hint_Mission_0|Text]Вам нужно ввести новое существо в эту экосистему. Он должен значительно размножаться и стать доминирующим видом в этой экосистеме».&
+Hint_Mission_1|Text]Ваша текущая цель — спасти текущую экосистему от неминуемого исчезновения. Вы должны понять причину вымирания и исправить ее, вводя новый вид. Сохраняйте популяцию всех существ выше 22 в течение 20 секунд.&
+Hint_Mission_2|Text]Вы должны спасти жизнь в этом бесплодном мире. Крайне малое количество солнечной энергии замедляет рост растений. Вам нужно какое-то время удерживать количество существ выше 10.&
+Hint_Mission_3|Text]Все, что вам нужно сделать, это полностью разрушить эту экосистему. Вы должны создать вид, который приведет к полному уничтожению жизни.&
+Hint_Mission_4|Text]Большая часть суши покрыта водой. Вы должны создать вид, адаптированный к этой экосистеме, и достичь общего числа существ более 22.&
+Hint3|Text]Эта большая вкладка позволяет вам создавать свои собственные виды. Давайте быстро пройдемся по всем настройкам здесь.&
+Hint4|Text]Эти настройки позволяют вам изменять здоровье, урон от ударов, дистанцию ​​поиска еды и максимальную продолжительность жизни ваших существ.&
+Hint5|Text]Для увеличения любой характеристики требуется 1 очко. Снижение характеристик вашего существа также даст вам 1 очко.&
+Hint6|Text]Вы также можете выбрать тип вашего вида. Наземные и морские виды могут существовать только в своей среде обитания. Земноводные могут жить как на воде, так и на суше.&
+Hint7|Text]Когда вы закончите создание нового вида, нажмите кнопку «Создать». Все созданные вами виды будут отображаться на панели справа.&
+Hint8|Text]Вернемся к игре и создадим ваш первый собственный вид.&
+TotalPoints|PreText]Очки:&
+Damage|PreText]Урон:&
+HintDamage|Questionmark (1)]Пустой текст подсказки (скоро)&
+HP|PreText]HP:&
+HP|Text]100 и
+HintHP|Questionmark (1)]Пустой текст подсказки (скоро)&
+SenceRange|PreText]Диапазон восприятия:&
+HintSenceRange|Questionmark (1)]Пустой текст подсказки (скоро)&
+MaxAge|PreText]Максимальный возраст:&
+MaxAge|Text]130&
+HintMaxAge|Questionmark (1)]Пустой текст подсказки (скоро)&
+Habitation type|Text]Тип жилья:&
+toggle_land|Label]Земля | 0 очков&
+Toggle_amphibious|Label]Амфибия | 3 очка&
+toggle_marine|Label]морской | +3 очка&
+Food type|Text]Тип еды:&
+toggle_carnivore|Label]Хищник | +2 очка&
+toggle_herbivore|Label]Травоядное животное | 0 очков&
+toggle_omnivore|Label]Всеядный | 2 очка&
+InputField|Placeholder]Введите название вида...&
+ModelSelection|Text]Выберите внешний вид существа&
+Button_1 Gray (3)|Text]Создавать&
+SpeciesBar(Clone)|damage]Урон:&
+SpeciesBar(Clone)|MaxAge]Максимальный возраст:&
+SpeciesBar(Clone)|HP]HP:&
+SpeciesBar(Clone)|food type]Хищник&
+SpeciesBar(Clone)|habitation]Сухопутное животное&
+SpeciesBar(Clone)|name]Пользовательское существо&
+CreatedSpeciesList|Text]Список созданных существ |&
+CreatedSpeciesList|Text (1)]Выбрано: пользовательский охотник&
+Missions|Text]Миссии&
+Free play|Text]Свободная игра&
+How to play|Text]Как играть&
+LanguageSelectionOptions|Text]Настройки локализации&
+ExitFromGameButton|Text]Выход&
+Mission 0|Text]1. Доминирующий вид жизни&
+Mission 1|Text]2. Спасение экосистемы&
+Mission2|Text]3. Засушливые земли&
+Mission3|Text]4. Истребление&
+Mission4|Text]5. Острова и море&
+LanguageSelection|Text]Настройка локализации&
+end&
