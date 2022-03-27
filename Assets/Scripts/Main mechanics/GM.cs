@@ -22,8 +22,6 @@ public class GM : MonoBehaviour
     /// первый разряд - массив разных типов ресурсов
     /// </summary>
     public GameObject[][] Resources = new GameObject[3][];
-    public int ResourcesTypesCount = 3;
-
     public GameObject[] UnitsBiologicalLand = new GameObject[350];
     public GameObject[] UnitsBiologicalMarine = new GameObject[200];
     public GameObject[] UnitsBiologicalAll = new GameObject[650];
@@ -62,27 +60,6 @@ public class GM : MonoBehaviour
         public string SelectedLanguage;
     }
 
-    public bool CheckBuildingBuildPossibilitySize4(Vector3 pos)
-    {
-        Vector3Int cp = new Vector3Int((int)pos.x, (int)pos.y, 0);
-        if (tc.tl.GetTile<Tile>(cp) == null || tc.tl.GetTile<Tile>(cp) == tc.WaterTile || tc.BuildingTiles[cp.x, cp.y] == true)
-        {
-            return false;
-        }
-        if (tc.tl.GetTile<Tile>(cp) == null || tc.tl.GetTile<Tile>(cp + new Vector3Int(-1, 0, 0)) == tc.WaterTile || tc.BuildingTiles[cp.x - 1, cp.y] == true)
-        {
-            return false;
-        }
-        if (tc.tl.GetTile<Tile>(cp) == null || tc.tl.GetTile<Tile>(cp + new Vector3Int(0, -1, 0)) == tc.WaterTile || tc.BuildingTiles[cp.x, cp.y - 1] == true) 
-        {
-            return false;
-        }
-        if (tc.tl.GetTile<Tile>(cp) == null || tc.tl.GetTile<Tile>(cp + new Vector3Int(-1, -1, 0)) == tc.WaterTile || tc.BuildingTiles[cp.x - 1, cp.y - 1] == true)
-        {
-            return false;
-        }
-        return true;
-    }
     public void ApplyNewBuilding(Vector3 pos, int BuildingSize = 4)
     {
         if (BuildingSize == 1)

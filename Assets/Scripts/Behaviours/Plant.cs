@@ -20,6 +20,21 @@ public class Plant : MonoBehaviour
     {
         Init();
     }
+    public void Init()
+    {
+        gm = GameObject.Find("GM").GetComponent<GM>();
+        l = GetComponent<bio>();
+        if (l.HabitationType == 1)
+        {
+            gm.AddNewUnit(gameObject, true, false);
+        }
+        else
+        {
+            gm.AddNewUnit(gameObject, true, true);
+        }
+        SunQuad = (int)(transform.position - gm.g1.WorldBottomBorder).y / 10 * 10;
+        SunQuad += (int)(transform.position - gm.g1.WorldBottomBorder).x / 10;
+    }
 
     // Update is called once per frame
     void Update()
@@ -80,19 +95,5 @@ public class Plant : MonoBehaviour
         n.GetComponent<bio>().BioID = l.BioID;
         n.GetComponent<bio>().Age = 0;
     }
-    public void Init()
-    {
-        gm = GameObject.Find("GM").GetComponent<GM>();
-        l = GetComponent<bio>();
-        if (l.HabitationType == 1)
-        {
-            gm.AddNewUnit(gameObject, true, false);
-        }
-        else
-        {
-            gm.AddNewUnit(gameObject, true, true);
-        }
-        SunQuad = (int)(transform.position - gm.g1.WorldBottomBorder).y / 10 * 10;
-        SunQuad += (int)(transform.position - gm.g1.WorldBottomBorder).x / 10;
-    }
+    
 }

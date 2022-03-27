@@ -5,15 +5,15 @@ using Pathfinding;
 
 public class Fighting : MonoBehaviour
 {
+    [HideInInspector]
     public bio b;
     public sbyte UnitTypeID = 0;
     public GM gm;
 
 
     public bool Attacking = false;
+
     public GameObject Target;
-
-
     private Animator anim;
     private AIBase ab;
     private float TimerAttackSpeed = 0;

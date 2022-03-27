@@ -7,20 +7,14 @@ using Pathfinding;
 
 public class Gen1 : MonoBehaviour
 {
-    public bool[,] Map;
-    public int MapSize = 100;
-
-    public TileController tc;
-    public GM gm;
-    public Tilemap tl;
-    public Tilemap BlockerLevel;
-    public GameObject cam;
-    public Vector3 CamStartingPosition;
-    public float CamNormalSize = 11.5f;
-    public GameObject NaturalObjects;
+    [Header("Map size settings")]
     public int xSize = 200;
     public int ySize = 200;
     public Vector3Int WorldBottomBorder;
+    public bool[,] Map;
+    public int MapSize = 100;
+
+    [Header("Map generator parameters")]
     public int Continents = 3;
     public int RandomIslandsCount = 10;
     public int MaxGroundCells = 1000;
@@ -28,27 +22,40 @@ public class Gen1 : MonoBehaviour
     public float MainContinentChunkChance = 0.8f;
     public float SecondContinentChunkChance = 0.4f;
     public float ContinentEnlargementChance = 0.3f;
+    public bool SpreadCellsMaximum = true;
 
-    public float[] ResourceGenerationChances = new float[1];
-    public GameObject[] ResourcesPrefabs = new GameObject[1];
-
+    [Header("Creatures")]
     public bool DontSpawnAnything = false;
     public GameObject[] CreaturesToSpawn = new GameObject[25];
     public int[] CreatureTypesAmountToSpawn = new int[25];
     public float[] CreatureTypesAmountRandomizationFactor = new float[25];
 
+    [Header("Other variables")]
+    public TileController tc;
+    public GM gm;
+    public Tilemap tl;
+    public Tilemap BlockerLevel;
+    public GameObject cam;
+    public Vector3 CamStartingPosition;
+    public float CamNormalSize = 11.5f;
+
+    public GameObject NaturalObjects;
+    public float[] ResourceGenerationChances = new float[1];
+    public GameObject[] ResourcesPrefabs = new GameObject[1];
+    [HideInInspector]
     public Vector3[] LandObjectSpawningPossiblePositions = new Vector3[250];
+    [HideInInspector]
     public int LandObjectSpawningPossiblePositionsCount = 0;
+    [HideInInspector]
     public Vector3[] NavalObjectSpawningPossiblePositions = new Vector3[250];
+    [HideInInspector]
     public int NavalObjectSpawningPossiblePositionsCount = 0;
 
 
-    public bool SpreadCellsMaximum = true;
+   
 
-    public int GroundCellsGenerated = 0;
-
-    public bool SuccesfullyGenerated = true;
-    public bool OrderToGenerate = false;
+    [SerializeField] private int GroundCellsGenerated = 0;
+    [SerializeField] private bool SuccesfullyGenerated = true;
 
     public SettingsSet BasicSettings;
 
@@ -81,11 +88,6 @@ public class Gen1 : MonoBehaviour
                 Debug.Log("scanned");
             }
             else timer += Time.deltaTime;
-        }
-        if (OrderToGenerate)
-        {
-            OrderToGenerate = false;
-            Generate();
         }
         if (SuccesfullyGenerated == false)
         {
@@ -274,10 +276,6 @@ public class Gen1 : MonoBehaviour
                         {
                             Debug.Log("Переполнение позиций на суше");
                         }
-                    }
-                    else
-                    {
-
                     }
                 }
                 else

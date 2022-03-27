@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8914607583189577886
 RectTransform:
   m_ObjectHideFlags: 0
@@ -90,9 +90,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1267293dbdb8da7498b043f92e0c1d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HintContainer: Unknown error (some requirements not achieved)
-  IsJustText: 1
+  OptionalHintContainer: empty
+  IsFadingAway: 0
+  TutorialHint: 0
+  TutorialHintID: 0
+  ChainHint: 0
+  LastHint: 1
   hintText: {fileID: 2998130643346928919}
+  HintFlashLight: {fileID: 0}
   LifeTimeOfHint: 2.5
 --- !u!1 &2998130643346928919
 GameObject:
@@ -207,7 +212,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0.000030517578}
   m_SizeDelta: {x: 0.000015258789, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1605496892862826412

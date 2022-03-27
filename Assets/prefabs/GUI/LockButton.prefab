@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4642175168215827055}
   - component: {fileID: 1138013056052798159}
   - component: {fileID: 8181871327763024763}
-  - component: {fileID: 7473431321042679470}
   m_Layer: 5
   m_Name: LockButton
   m_TagString: Untagged
@@ -124,7 +123,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7473431321042679470}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UISwitchTabButton, Assembly-CSharp
         m_MethodName: DragSwitch
         m_Mode: 1
@@ -136,19 +135,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7473431321042679470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391268251157062919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ab9950bbeff008418e59f55c25825cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DragLocked: 1
 --- !u!1 &7081924066103716366
 GameObject:
   m_ObjectHideFlags: 0
