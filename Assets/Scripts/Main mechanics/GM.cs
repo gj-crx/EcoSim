@@ -135,6 +135,7 @@ public class GM : MonoBehaviour
             }
         }
         gui.MissionHints[missionID].SetActive(true);
+        g1.BasicSettings.ApplySettings(g1);
         if (missionID == 0)
         {
            //особые условия миссии 0
@@ -177,12 +178,17 @@ public class GM : MonoBehaviour
         }
         gui.MissionsIndicators[missionID].SetActive(true);
         MissionIsStarted = true;
-        g1.BasicSettings.ApplySettings(g1);
+        
     }
     public void StartFreePlay()
     {
         sc.CurrentSpeciesSpawnedCount = 0;
         GetComponent<QuestTracking>().CurrentMission = 100;
+        g1.BasicSettings.ApplySettings(g1);
+        for (int i = 0; i < g1.CreatureTypesAmountToSpawn.Length; i++)
+        {
+            g1.CreatureTypesAmountToSpawn[i] = 0;
+        }
         g1.Generate();
         gui.MainMenuGUI.SetActive(false);
         gui.InGameGUI.SetActive(true);
@@ -194,7 +200,6 @@ public class GM : MonoBehaviour
             }
         }
         MissionIsStarted = false;
-        g1.BasicSettings.ApplySettings(g1);
         sc.SpeciesSpawnedLimit = 999;
     }
     public void StartTutorial()

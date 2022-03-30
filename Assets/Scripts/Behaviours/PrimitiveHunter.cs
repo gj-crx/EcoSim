@@ -327,7 +327,7 @@ public class PrimitiveHunter : MonoBehaviour
             }
             else
             {
-                ab.destination = gm.g1.LandObjectSpawningPossiblePositions[Random.Range(0, gm.g1.LandObjectSpawningPossiblePositionsCount)];
+                ab.destination = gm.g1.LandObjectSpawningPossiblePositions[Random.Range(0, gm.g1.LandObjectSpawningPossiblePositions.Count)];
             }
         }
         if (l.HabitationType == 1)
@@ -339,7 +339,7 @@ public class PrimitiveHunter : MonoBehaviour
             else
             {
                 //заменить на морские точки
-                ab.destination = gm.g1.NavalObjectSpawningPossiblePositions[Random.Range(0, gm.g1.NavalObjectSpawningPossiblePositionsCount)];
+                ab.destination = gm.g1.NavalObjectSpawningPossiblePositions[Random.Range(0, gm.g1.NavalObjectSpawningPossiblePositions.Count)];
             }
         }
         if (l.HabitationType == 2)
@@ -350,7 +350,7 @@ public class PrimitiveHunter : MonoBehaviour
             }
             else
             {
-                ab.destination = gm.g1.LandObjectSpawningPossiblePositions[Random.Range(0, gm.g1.LandObjectSpawningPossiblePositionsCount)];
+                ab.destination = gm.g1.LandObjectSpawningPossiblePositions[Random.Range(0, gm.g1.LandObjectSpawningPossiblePositions.Count)];
             }
         }
         CurrentAction = gm.loc.ActionsLocalized[3];
@@ -379,11 +379,11 @@ public class PrimitiveHunter : MonoBehaviour
     {
         if (l.HabitationType == 0 || l.HabitationType == 2)
         {
-            ab.destination = gm.g1.LandObjectSpawningPossiblePositions[Random.Range(0, gm.g1.LandObjectSpawningPossiblePositionsCount)];
+            ab.destination = gm.g1.LandObjectSpawningPossiblePositions[Random.Range(0, gm.g1.LandObjectSpawningPossiblePositions.Count)];
         }
         else
         {
-            ab.destination = gm.g1.NavalObjectSpawningPossiblePositions[Random.Range(0, gm.g1.NavalObjectSpawningPossiblePositionsCount)];
+            ab.destination = gm.g1.NavalObjectSpawningPossiblePositions[Random.Range(0, gm.g1.NavalObjectSpawningPossiblePositions.Count)];
         }
         CurrentAction = gm.loc.ActionsLocalized[4];
     }

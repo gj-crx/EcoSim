@@ -40,16 +40,14 @@ public class Gen1 : MonoBehaviour
     public float CamNormalSize = 11.5f;
 
     public GameObject NaturalObjects;
-    public float[] ResourceGenerationChances = new float[1];
+    public float[] CreatureSpawningPositionsCreatingChance = new float[1];
     public GameObject[] ResourcesPrefabs = new GameObject[1];
     [HideInInspector]
-    public Vector3[] LandObjectSpawningPossiblePositions = new Vector3[250];
+    public List<Vector3> LandObjectSpawningPossiblePositions = new List<Vector3>();
     [HideInInspector]
-    public int LandObjectSpawningPossiblePositionsCount = 0;
+    public List<Vector3> NavalObjectSpawningPossiblePositions = new List<Vector3>();
     [HideInInspector]
-    public Vector3[] NavalObjectSpawningPossiblePositions = new Vector3[250];
-    [HideInInspector]
-    public int NavalObjectSpawningPossiblePositionsCount = 0;
+    public int NavalObjectSpawningPossiblePositionsCount = 25;
 
 
    
@@ -62,6 +60,7 @@ public class Gen1 : MonoBehaviour
 
     private float timer = 0;
     private bool Scanned = false;
+
 
     void Start()
     {
@@ -91,7 +90,7 @@ public class Gen1 : MonoBehaviour
         }
         if (SuccesfullyGenerated == false)
         {
-            Debug.Log("Не сгенерировано");
+            Debug.Log("Generation failed, trying again untill overflow limit");
             MaxGroundCells -= 1000;
             xSize -= 35;
             ySize -= 35;
@@ -103,10 +102,8 @@ public class Gen1 : MonoBehaviour
         Map = new bool[MapSize, MapSize];
         tc.BuildingTiles = new bool[xSize, ySize];
         tc.ResourceSources = new sbyte[xSize, ySize];
-        LandObjectSpawningPossiblePositions = new Vector3[250];
-        LandObjectSpawningPossiblePositionsCount = 0;
-        NavalObjectSpawningPossiblePositions = new Vector3[250];
-        NavalObjectSpawningPossiblePositionsCount = 0;
+        LandObjectSpawningPossiblePositions = new List<Vector3>();
+        NavalObjectSpawningPossiblePositions = new List<Vector3>();
         GroundCellsGenerated = 0;
         SuccesfullyGenerated = false;
         Scanned = false;
@@ -257,42 +254,15 @@ public class Gen1 : MonoBehaviour
             }
         }
     }
-    public void GenerateResourcesOnTile(Vector3Int pos)
+    public void CreateLandSpawningPositions(Vector3Int pos)
     {
-        for (int i = 1; i < ResourceGenerationChances.Length; i++)
+        for (int i = 1; i < CreatureSpawningPositionsCreatingChance.Length; i++)
         {
-            if (Random.Range(0.0f, 1.0f) < ResourceGenerationChances[i])
+            if (Random.Range(0.0f, 1.0f) < CreatureSpawningPositionsCreatingChance[i])
             {
-                if (i == 1)
+                if (tc.WalkableTile(pos))
                 {
-                    if (tc.WalkableTile(pos))
-                    {
-                        if (LandObjectSpawningPossiblePositionsCount < LandObjectSpawningPossiblePositions.Length)
-                        {
-                            LandObjectSpawningPossiblePositions[LandObjectSpawningPossiblePositionsCount] = pos;
-                            LandObjectSpawningPossiblePositionsCount++;
-                        }
-                        else
-                        {
-                            Debug.Log("Переполнение позиций на суше");
-                        }
-                    }
-                }
-                else
-                {
-                    GameObject NewRes = Instantiate(ResourcesPrefabs[i], pos, Quaternion.identity);
-                    NewRes.transform.SetParent(NaturalObjects.transform);
-                    tc.ResourceSources[pos.x, pos.y] = (sbyte)i;
-                    gm.Resources[i][gm.ResourcesGeneratedCount[i]] = NewRes;
-                    gm.ResourcesGeneratedCount[i]++;
-                    if (i == 1)
-                    {
-                        gm.ApplyNewBuilding(pos, 1);
-                    }
-                    if (i == 4)
-                    {
-                        gm.ApplyNewBuilding(pos, 4);
-                    }
+                    LandObjectSpawningPossiblePositions.Add(pos);
                 }
             }
         }
@@ -303,7 +273,7 @@ public class Gen1 : MonoBehaviour
         {
             Destroy(g);
         }
-        foreach (GameObject g in gm.UnitsBiologicalLand)
+        foreach (GameObject g in gm.UnitsBiologicalAll)
         {
             Destroy(g);
         }
@@ -336,7 +306,7 @@ public class Gen1 : MonoBehaviour
             {
                 if (CreaturesToSpawn[i].GetComponent<bio>().HabitationType == 0 || CreaturesToSpawn[i].GetComponent<bio>().HabitationType == 2)
                 {
-                    GameObject sp = Instantiate(CreaturesToSpawn[i], LandObjectSpawningPossiblePositions[Random.Range(0, LandObjectSpawningPossiblePositionsCount)], Quaternion.identity);
+                    GameObject sp = Instantiate(CreaturesToSpawn[i], LandObjectSpawningPossiblePositions[Random.Range(0, LandObjectSpawningPossiblePositions.Count)], Quaternion.identity);
                     sp.name = sp.name.Substring(0, sp.name.Length - 7) + " breed 0";
                 }
                 else
@@ -349,14 +319,13 @@ public class Gen1 : MonoBehaviour
     }
     public void GenerateWaterSpots()
     {
-        while (NavalObjectSpawningPossiblePositionsCount < NavalObjectSpawningPossiblePositions.Length)
+        while (NavalObjectSpawningPossiblePositions.Count < NavalObjectSpawningPossiblePositionsCount)
         {
             Vector3Int RandomPos = new Vector3Int(Random.Range(0, xSize - 2), Random.Range(0, ySize - 2), 0) + WorldBottomBorder;
             RandomPos = new Vector3Int((int)RandomPos.x, (int)RandomPos.y, 0);
             if (gm.tc.ZeroTilemapLevel.GetTile<Tile>(RandomPos) != null)
             {
-                NavalObjectSpawningPossiblePositions[NavalObjectSpawningPossiblePositionsCount] = RandomPos;
-                NavalObjectSpawningPossiblePositionsCount++;
+                NavalObjectSpawningPossiblePositions.Add(RandomPos);
             }
         }
     }

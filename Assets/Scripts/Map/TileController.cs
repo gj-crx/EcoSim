@@ -131,7 +131,7 @@ public class TileController : MonoBehaviour
         tl.SetTile(pos, Tiles[TileID]);
         if (TileID == 8)
         {
-            g1.GenerateResourcesOnTile(pos);
+            g1.CreateLandSpawningPositions(pos);
         }
     }
     public void JustPlace(Vector3Int pos)
