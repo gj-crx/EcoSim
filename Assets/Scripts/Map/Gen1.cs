@@ -84,13 +84,13 @@ public class Gen1 : MonoBehaviour
             {
                 AstarPath.active.Scan();
                 Scanned = true;
-                Debug.Log("scanned");
+             //   Debug.Log("scanned");
             }
             else timer += Time.deltaTime;
         }
         if (SuccesfullyGenerated == false)
         {
-            Debug.Log("Generation failed, trying again untill overflow limit");
+            Debug.Log("Generation failed, trying again until overflow limit");
             MaxGroundCells -= 1000;
             xSize -= 35;
             ySize -= 35;
@@ -113,7 +113,7 @@ public class Gen1 : MonoBehaviour
         tl.ClearAllTiles();
         tc.tl.ClearAllTiles();
         RemoveAllObjects();
-        //заполняем мир водой
+        //fill world with water
         for (int y = 0; y < ySize; y++)
         {
             for (int x = 0; x < xSize; x++)
@@ -127,9 +127,9 @@ public class Gen1 : MonoBehaviour
         {
             CurrentMaxGroundCells = MaxGroundCells / Continents;
         }
-        //генерируем континенты
+        //Generating big chunks of land
         GenerateGround(Continents, CurrentMaxGroundCells);
-        //генерируем мелкие островки
+        //Generating small chunks of land
         for (int i = 0; i < RandomIslandsCount; i++)
         {
             Vector3Int CurrentPos = WorldBottomBorder + new Vector3Int(Random.Range(0, xSize), Random.Range(0, ySize), 0);
@@ -138,7 +138,7 @@ public class Gen1 : MonoBehaviour
             SecondGenerationProcess(CurrentPos, CurrentMaxGroundCells);
         }
         while (GroundCellsGenerated < CurrentMaxGroundCells * MinimumOutOfMax)
-        { //сгенерировано меньше минимума? генерируем еще
+        { //generate until minimum
             SpreadCellsMaximum = false;
             GenerateGround(1, CurrentMaxGroundCells);
         }
@@ -146,10 +146,12 @@ public class Gen1 : MonoBehaviour
         ActuallyPlaceAllTiles();
         CorrectAllTiles();
         GenerateWaterSpots();
-        CreatureSpawning();
+        if (DontSpawnAnything == false)
+        {
+            CreatureSpawning();
+        }
 
         SuccesfullyGenerated = true;
-        Debug.Log("Успешно сгенерировано");
     }
     public void GenerateGround(int GroundSpotsToGenerate, int currentMax)
     {
@@ -277,14 +279,6 @@ public class Gen1 : MonoBehaviour
         {
             Destroy(g);
         }
-        foreach (GameObject g in gm.Resources[1])
-        {
-            Destroy(g);
-        }
-        foreach (GameObject g in gm.Resources[2])
-        {
-            Destroy(g);
-        }
     }
     public void SetCamOnPreviewStance()
     {
@@ -298,19 +292,18 @@ public class Gen1 : MonoBehaviour
     }
     public void CreatureSpawning()
     {
-        if (DontSpawnAnything) return;
         for (int i = 0; i < CreatureTypesAmountToSpawn.Length; i++)
         {
             CreatureTypesAmountToSpawn[i] = (int)(CreatureTypesAmountToSpawn[i] * (1 + Random.Range(-CreatureTypesAmountRandomizationFactor[i], CreatureTypesAmountRandomizationFactor[i])));
             for (int k = 0; k < CreatureTypesAmountToSpawn[i]; k++)
             {
                 if (CreaturesToSpawn[i].GetComponent<bio>().HabitationType == 0 || CreaturesToSpawn[i].GetComponent<bio>().HabitationType == 2)
-                {
+                { //Place creature on land
                     GameObject sp = Instantiate(CreaturesToSpawn[i], LandObjectSpawningPossiblePositions[Random.Range(0, LandObjectSpawningPossiblePositions.Count)], Quaternion.identity);
                     sp.name = sp.name.Substring(0, sp.name.Length - 7) + " breed 0";
                 }
                 else
-                {
+                { //Place creature on water
                     GameObject sp = Instantiate(CreaturesToSpawn[i], NavalObjectSpawningPossiblePositions[Random.Range(0, NavalObjectSpawningPossiblePositionsCount)], Quaternion.identity);
                     sp.name = sp.name.Substring(0, sp.name.Length - 7) + " breed 0";
                 }

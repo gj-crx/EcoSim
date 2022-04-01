@@ -18,10 +18,6 @@ public class GM : MonoBehaviour
 
     public bool AndroidRunning = true;
     public bool MissionIsStarted = false;
-    /// <summary>
-    /// первый разряд - массив разных типов ресурсов
-    /// </summary>
-    public GameObject[][] Resources = new GameObject[3][];
     public GameObject[] UnitsBiologicalLand = new GameObject[350];
     public GameObject[] UnitsBiologicalMarine = new GameObject[200];
     public GameObject[] UnitsBiologicalAll = new GameObject[650];
@@ -36,8 +32,6 @@ public class GM : MonoBehaviour
 
     void Start()
     {
-        Resources[1] = new GameObject[1000];
-        Resources[2] = new GameObject[150];
         fl.LoadData();
         if (gamedata.SelectedLanguage == null || gamedata.SelectedLanguage == "nothing")
         {

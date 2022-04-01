@@ -5,9 +5,7 @@ using Pathfinding;
 
 public class Fighting : MonoBehaviour
 {
-    [HideInInspector]
-    public bio b;
-    public sbyte UnitTypeID = 0;
+    [HideInInspector] public bio b;
     public GM gm;
 
 
@@ -17,7 +15,6 @@ public class Fighting : MonoBehaviour
     private Animator anim;
     private AIBase ab;
     private float TimerAttackSpeed = 0;
-    private float TimerTargetCheck = 0;
     void Start()
     {
         ab = GetComponent<AIBase>();
@@ -75,15 +72,15 @@ public class Fighting : MonoBehaviour
                 {
                     bio AttackedBio = target.GetComponent<bio>();
                     AttackedBio.HPCurrent -= b.Damage;
-                    //проверка на смерть
+                    //check for a kill
                     if (AttackedBio.HPCurrent <= 0)
-                    { //убиваем
+                    { //
                         target.GetComponent<bio>().Death(gameObject);
                         return 2;
                     }
                 }
                 else
-                { //ломаем здание или ресурс
+                { //destroying artificial object
                    
                 }
                 return 1;
